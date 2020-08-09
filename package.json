@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "name": "b2-remove-prefix",
+    "version": "1.0.0",
+    "description": "Allows cleaner URLs for CloudFlare domains pointing to B2 buckets",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write '**/*.{js,css,json,md}'"
+    },
+    "author": "Phillip Stromberg <phillip@strombergs.com>",
+    "license": "The Unlicense",
+    "devDependencies": {
+        "prettier": "^1.17.0"
+    }
+}

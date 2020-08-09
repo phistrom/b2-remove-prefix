@@ -1,0 +1,12 @@
+name = "b2-remove-prefix"
+type = "javascript"
+account_id = ""
+workers_dev = false
+routes = [
+    "i.example.com/*"
+]
+zone_id = ""
+
+[vars]
+B2_BUCKET_NAME = "your-bucket-name-here"
+CF_CACHE_TTL = 3600
