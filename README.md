@@ -20,4 +20,24 @@ script in front of it, your URL becomes a simple
 `https://i.example.com/test.txt`.
 
 ## License
-The Unlicense
+[The Unlicense](https://unlicense.org/)
+
+## Installation
+1. Use 
+[wrangler](https://developers.cloudflare.com/workers/tooling/wrangler/install) 
+to generate a new app
+```sh
+wrangler generate myapp https://github.com/phistrom/b2-remove-prefix
+```
+2. Overwrite the wrangler-generated `wrangler.toml` with a copy of 
+`wrangler.toml.example`.
+3. Fill in `zone_id`, `account_id`, and `routes` fields as usual in 
+`wrangler.toml`
+4. Also set the `B2_BUCKET_NAME` under `[vars]` in `wrangler.toml` to your B2 
+bucket name
+5. Upload to the routes you specified with `wrangler publish` 
+
+**Alternatively**, you could also just copy and paste the code from `index.js` 
+into the *Quick Edit* editor in your CloudFlare dashboard. Just be sure to also 
+set the `B2_BUCKET_NAME` and `CF_CACHE_TTL` environment variables for this 
+Worker by going into its settings.
