@@ -41,3 +41,10 @@ bucket name
 into the *Quick Edit* editor in your CloudFlare dashboard. Just be sure to also 
 set the `B2_BUCKET_NAME` and `CF_CACHE_TTL` environment variables for this 
 Worker by going into its settings.
+
+## Alternate solution
+
+If you only want to remove the `/file/your-bucket` from the URL and need no other logic, this can now be solved with with a "Transform Rule" instead of a worker.
+1. Create a "Rewrite URL" rule (Rules -> Transform Rules from the side bar in your Cloudflare admin)
+2. Manually set the rule expression to `(not starts_with(http.request.uri.path, "/file/your-bucket"))`
+3. Below, in the "Then.." section, set the Path rewrite to Dynamic and set the rule to `concat("/file/your-bucket",http.request.uri.path)`
